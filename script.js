@@ -49,9 +49,9 @@ window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > 100) {
-        header.style.background = 'rgba(0, 0, 0, 0.9)';
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
     } else {
-        header.style.background = 'rgba(0, 0, 0, 0.5)';
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
     }
     
     lastScrollY = currentScrollY;
@@ -240,7 +240,7 @@ const lightboxStyles = `
         position: relative;
         max-width: 90%;
         max-height: 90%;
-        background: #0a0a0a;
+        background: #ffffff;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -265,7 +265,7 @@ const lightboxStyles = `
     }
     
     .lightbox-close:hover {
-        background: rgba(255, 107, 53, 0.8);
+        background: rgba(52, 152, 219, 0.8);
         transform: scale(1.1);
     }
     
@@ -277,17 +277,17 @@ const lightboxStyles = `
     
     .lightbox-info {
         padding: 2rem;
-        color: white;
+        color: #2c3e50;
     }
     
     .lightbox-info h3 {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        color: #ff6b35;
+        color: #3498db;
     }
     
     .lightbox-info p {
-        color: #e5d2b0;
+        color: #6c757d;
         line-height: 1.6;
     }
     
@@ -310,30 +310,6 @@ const lightboxStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = lightboxStyles;
 document.head.appendChild(styleSheet);
-
-// Active navigation highlighting
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
