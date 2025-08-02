@@ -1,56 +1,69 @@
-// ===== SMOOTH SCROLLING =====
+// Mobile Navigation
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+
+if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+        mobileNav.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close mobile nav when clicking on a link
+    const mobileNavLinks = mobileNav.querySelectorAll('a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Close mobile nav when clicking overlay
+    if (mobileNavOverlay) {
+        mobileNavOverlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+}
+
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            // Special handling for home section - scroll to absolute top
-            if (this.getAttribute('href') === '#home') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            } 
-            else if (this.getAttribute('href') === '#contact') {
-                const targetPosition = target.offsetTop - 20; // Smaller offset = scroll down more
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-            else {
-                // Calculate navbar height dynamically
-                const navbar = document.querySelector('.navbar') || document.querySelector('nav') || document.querySelector('header');
-                const navbarHeight = navbar ? navbar.offsetHeight : 80; // fallback to 80px
-                const targetPosition = target.offsetTop - navbarHeight - 20; // navbar height + small buffer
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         }
     });
 });
 
-// ===== HEADER BACKGROUND CHANGE ON SCROLL =====
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(0, 0, 0, 0.85)';
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+// Header scroll effect
+const header = document.querySelector('.header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > 100) {
+        header.style.background = 'rgba(0, 0, 0, 0.9)';
     } else {
         header.style.background = 'rgba(0, 0, 0, 0.5)';
-        header.style.boxShadow = 'none';
     }
+    
+    lastScrollY = currentScrollY;
 });
 
-// ===== SCROLL ANIMATIONS =====
+// Fade in animation for elements
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
@@ -58,166 +71,287 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
+// Observe all elements with fade-in class
 document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// ===== SERVICE CARDS HOVER EFFECTS =====
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// ===== SERVICE CARDS SELECTION =====
-document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', function() {
-        const checkbox = this.querySelector('input[type="checkbox"]');
-        checkbox.checked = !checkbox.checked;
+// Gallery lightbox functionality
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('h3')?.textContent || '';
+        const description = item.querySelector('p')?.textContent || '';
         
-        if (checkbox.checked) {
-            this.classList.add('selected');
-        } else {
-            this.classList.remove('selected');
-        }
+        // Create lightbox
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <span class="lightbox-close">&times;</span>
+                <img src="${img.src}" alt="${img.alt}">
+                <div class="lightbox-info">
+                    <h3>${title}</h3>
+                    <p>${description}</p>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(lightbox);
+        document.body.style.overflow = 'hidden';
+        
+        // Close lightbox
+        const closeLightbox = () => {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = '';
+        };
+        
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
     });
 });
 
-// ===== FORM SUBMISSION HANDLER =====
-// Replace the old handler with AJAX submission to Formspree
-
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const form = this;
-    const formData = new FormData(form);
-
-    // Remove all existing 'service[]' from FormData
-    formData.delete('service[]');
-    // Add checked checkboxes
-    document.querySelectorAll('input[name="service[]"]:checked').forEach(checkbox => {
-        formData.append('service[]', checkbox.value);
-    });
-    // Add mobile select if present and not empty
-    const mobileService = document.getElementById('mobile-service');
-    if (mobileService && mobileService.value && mobileService.value !== '') {
-        formData.append('service[]', mobileService.value);
-    }
-
-    // Find or create message container
-    let messageContainer = form.querySelector('.form-message');
-    if (!messageContainer) {
-        messageContainer = document.createElement('div');
-        messageContainer.className = 'form-message';
-        form.appendChild(messageContainer);
-    }
-    messageContainer.textContent = '';
-
-    fetch('https://formspree.io/f/mblkjqqe', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
+// Contact form handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Basic validation
+        if (!data.name || !data.phone) {
+            alert('Please fill in all required fields.');
+            return;
         }
-    }).then(response => {
-        if (response.ok) {
-            // alert('Thank you for your message! We\'ll get back to you soon.');
-            form.reset();
-            messageContainer.textContent = 'Thanks for reaching out!';
-        } else {
-            // alert('Oops! There was a problem submitting your form.');
-            messageContainer.textContent = 'Oops! There was a problem submitting your form.';
-        }
-    }).catch(error => {
-        // alert('Oops! There was a problem submitting your form.');
-        messageContainer.textContent = 'Oops! There was a problem submitting your form.';
-    });
-});
+        
+        // Create WhatsApp message
+        const message = `Hello Little Minds Foundation School,
 
-// ===== NEWSLETTER FORM SUBMISSION HANDLER =====
+I would like to enquire about admission:
+
+Name: ${data.name}
+Phone: ${data.phone}
+Email: ${data.email || 'Not provided'}
+Child's Age: ${data.childAge || 'Not specified'}
+
+Message: ${data.message || 'No additional message'}
+
+Please contact me for more information.`;
+
+        const whatsappUrl = `https://wa.me/919119060984?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        // Reset form
+        this.reset();
+    });
+}
+
+// Newsletter form handling
 const newsletterForm = document.querySelector('.newsletter-form');
 if (newsletterForm) {
-  newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const form = this;
-    const formData = new FormData(form);
-    fetch('https://formspree.io/f/xvgqoelj', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        alert('You’re on the list!');
-        form.reset();
-      } else {
-        alert('Oops! There was a problem submitting your subscription.');
-      }
-    }).catch(error => {
-      alert('Oops! There was a problem submitting your subscription.');
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = this.querySelector('input[type="email"]').value;
+        if (!email) {
+            alert('Please enter your email address.');
+            return;
+        }
+        
+        // Create WhatsApp message for newsletter subscription
+        const message = `Hello Little Minds Foundation School,
+
+I would like to subscribe to your newsletter.
+
+Email: ${email}
+
+Please add me to your mailing list.`;
+
+        const whatsappUrl = `https://wa.me/919119060984?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        // Reset form
+        this.reset();
+        alert('Thank you for subscribing! We will contact you soon.');
     });
-  });
 }
 
-// ===== MOBILE NAVIGATION =====
-const hamburger = document.querySelector('.hamburger');
-const mobileNav = document.getElementById('mobileNav');
-const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-function toggleMobileNav() {
-    hamburger.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-    mobileNavOverlay.classList.toggle('active');
-    
-    if (mobileNav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
-}
-
-function closeMobileNav() {
-    hamburger.classList.remove('active');
-    mobileNav.classList.remove('active');
-    mobileNavOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', toggleMobileNav);
-    
-    // Close menu on nav link click
-    mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMobileNav);
-    });
-    
-    // Close menu on overlay click
-    if (mobileNavOverlay) {
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
-    }
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-            closeMobileNav();
+// Stats counter animation
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+            const finalValue = target.textContent;
+            const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+            
+            let currentValue = 0;
+            const increment = numericValue / 50;
+            const timer = setInterval(() => {
+                currentValue += increment;
+                if (currentValue >= numericValue) {
+                    currentValue = numericValue;
+                    clearInterval(timer);
+                }
+                target.textContent = Math.floor(currentValue) + finalValue.replace(/\d+/, '');
+            }, 30);
+            
+            statsObserver.unobserve(target);
         }
     });
-}
+}, { threshold: 0.5 });
 
-// ===== HAMBURGER DISPLAY HANDLER =====
-function handleHamburgerDisplay() {
-    if (window.innerWidth <= 768) {
-        hamburger.style.display = 'flex';
-    } else {
-        hamburger.style.display = 'none';
-        closeMobileNav();
+statNumbers.forEach(stat => {
+    statsObserver.observe(stat);
+});
+
+// Add lightbox styles dynamically
+const lightboxStyles = `
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 2rem;
     }
-}
+    
+    .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        background: #0a0a0a;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lightbox-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 10001;
+        background: rgba(0, 0, 0, 0.5);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .lightbox-close:hover {
+        background: rgba(255, 107, 53, 0.8);
+        transform: scale(1.1);
+    }
+    
+    .lightbox-content img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .lightbox-info {
+        padding: 2rem;
+        color: white;
+    }
+    
+    .lightbox-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #ff6b35;
+    }
+    
+    .lightbox-info p {
+        color: #e5d2b0;
+        line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+        .lightbox {
+            padding: 1rem;
+        }
+        
+        .lightbox-info {
+            padding: 1rem;
+        }
+        
+        .lightbox-info h3 {
+            font-size: 1.2rem;
+        }
+    }
+`;
 
-window.addEventListener('resize', handleHamburgerDisplay);
-window.addEventListener('DOMContentLoaded', handleHamburgerDisplay); 
+// Add styles to document
+const styleSheet = document.createElement('style');
+styleSheet.textContent = lightboxStyles;
+document.head.appendChild(styleSheet);
+
+// Active navigation highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero');
+    
+    if (hero) {
+        const rate = scrolled * -0.5;
+        hero.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Initialize animations when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Add fade-in class to elements that should animate
+    const animateElements = document.querySelectorAll('.gallery-item, .founder-card, .team-member, .about-content, .contact-layout');
+    animateElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+}); 
