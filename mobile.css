@@ -31,7 +31,7 @@
     width: 28px;
     height: 3px;
     margin: 3px 0;
-    background: #e5d2b0;
+    background: #322353;
     border-radius: 2px;
     transition: all 0.3s ease;
     transform-origin: center;
@@ -58,7 +58,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(242, 239, 247, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1198;
     opacity: 0;
@@ -140,7 +140,7 @@
 .mobile-nav ul li:nth-child(5) { transition-delay: 0.5s; }
 
 .mobile-nav ul li a {
-    color: #e5d2b0;
+    color: #322353;
     font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
@@ -172,8 +172,8 @@
 
 .mobile-nav ul li a:hover,
 .mobile-nav ul li a.active {
-    color: #f0e6d2;
-    background: rgba(198, 156, 109, 0.1);
+    color: #322353;
+    background: rgba(50, 35, 83, 0.1);
 }
 
 /* Mobile CTA Button */
@@ -257,6 +257,7 @@
         padding-top: 100px; /* Reduced padding for mobile */
         padding-bottom: 80px; /* Increased bottom padding */
         min-height: calc(100vh + 100px); /* Increased height to push content down */
+        background: #f2eff7;
     }
     
     .hero h1 {
@@ -737,6 +738,7 @@
         padding-top: 80px;
         padding-bottom: 30px;
         min-height: calc(100vh - 80px);
+        background: #f2eff7;
     }
     
     .hero h1,
@@ -859,6 +861,7 @@
         padding-top: 70px;
         padding-bottom: 25px;
         min-height: calc(100vh - 70px);
+        background: #f2eff7;
     }
     
     .hero h1 {
