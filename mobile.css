@@ -31,7 +31,7 @@
     width: 28px;
     height: 3px;
     margin: 3px 0;
-    background: #e5d2b0;
+    background: #333333;
     border-radius: 2px;
     transition: all 0.3s ease;
     transform-origin: center;
@@ -58,7 +58,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1198;
     opacity: 0;
