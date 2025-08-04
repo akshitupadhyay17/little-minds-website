@@ -7,7 +7,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 31px;
+    scroll-padding-top: 30px;
 }
 
 body {
@@ -288,7 +288,7 @@ body {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    padding: 120px 2rem 80px;
+    padding: 130px 2rem 110px;
     background: linear-gradient(135deg, #f2eff7 0%, #e8e3f0 50%, #ddd6e9 100%);
     position: relative;
     overflow: hidden;
