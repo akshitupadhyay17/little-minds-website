@@ -1,331 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Little Minds® Foundation School - Dehradun</title>
-  <meta name="description" content="Little Minds® Foundation School, Dehradun - Nurturing young minds with hands-on education, experienced faculty, and a legacy of excellence in K-12 education." />
-
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/logos/apple-touch-icon.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Fraunces Font -->
-  <link rel="stylesheet" href="https://use.typekit.net/dzu3mkc.css">
-
-  <!-- Font Awesome & Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="mobile.css" />
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Little Minds® Foundation School | Dehradun" />
-  <meta property="og:description" content="Nurturing young minds with hands-on education, experienced faculty, and a legacy of excellence in K-12 education." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://littlemindsdehradun.com" />
-  <meta property="og:image" content="https://littlemindsdehradun.com/img/logos/little-minds-link-popup.jpg" />
-  <meta property="og:image:secure_url" content="https://littlemindsdehradun.com/img/logos/little-minds-link-popup.jpg" />
-  <meta property="og:image:alt" content="Little Minds Foundation School Logo" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJBTDC4QGW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZJBTDC4QGW');
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Minds® Foundation School - Nurturing Young Minds in Dehradun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="#home" class="logo">
-                <img src="img/logos/little-minds-logo.png" alt="Little Minds Foundation School Logo" class="logo-img">
-            </a>
+            <div class="logo">
+                <img src="img/logos/little-minds-logo.png" alt="Little Minds Foundation School" class="logo-img">
+            </div>
             
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#timescape">Our Timescape</a></li>
+                <li><a href="#team">The Force Behind</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#alumni">Our Alumni</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#founders">Founder's Desk</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
-            <a href="https://wa.me/919119060984?text=Hello%20Little%20Minds%20Foundation%20School%2C%0AI%E2%80%99d%20like%20to%20enquire%20about%20admission." target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i> Enquire Now</a>
             
-            <!-- Mobile Nav -->
-            <button class="hamburger" aria-label="Open menu">
+            <a href="#contact" class="contact-btn">
+                <i class="fas fa-phone"></i>
+                Get In Touch
+            </a>
+            
+            <button class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </nav>
         
-        <nav class="mobile-nav" id="mobileNav">
-            <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#timescape">Our Timescape</a></li>
+                <li><a href="#team">The Force Behind</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#alumni">Our Alumni</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#founders">Founder's Desk</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
             <div class="mobile-cta">
-                <a href="https://wa.me/919119060984?text=Hello%20Little%20Minds%20Foundation%20School%2C%0AI%E2%80%99d%20like%20to%20enquire%20about%20admission." target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i> Enquire Now</a>
+                <a href="#contact" class="contact-btn">Get In Touch</a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-<section id="home" class="hero">
+    <section id="hero" class="hero">
+        <div class="floating-elements">
+            <div class="floating-ufo"></div>
+            <div class="floating-planet"></div>
+        </div>
+        
         <div class="hero-content">
-            <h1>Nurturing Young Minds for a Brighter Future</h1>
+            <h1>Where Little Minds Bloom Into Big Dreams</h1>
             <p>At Little Minds® Foundation School, Dehradun, we believe in hands-on education that develops confident, creative, and compassionate individuals. Our legacy of excellence in K-12 education spans across Haryana & Himachal Pradesh.</p>
-            <a href="https://wa.me/919119060984?text=Hello%20Little%20Minds%20Foundation%20School%2C%0AI%E2%80%99d%20like%20to%20enquire%20about%20admission." target="_blank" class="contact-btn2"><i class="fab fa-whatsapp"></i> Apply for Admission</a>
             
-            <!-- School Stats -->
+            <a href="#contact" class="contact-btn2">
+                <i class="fas fa-graduation-cap"></i>
+                Apply for Admission
+            </a>
+            
             <div class="hero-stats">
                 <div class="stat-item">
-                    <i class="fas fa-graduation-cap"></i>
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
                     <span class="stat-number">500+</span>
                     <span class="stat-label">Happy Students</span>
                 </div>
                 <div class="stat-item">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span class="stat-number">25+</span>
-                    <span class="stat-label">Expert Teachers</span>
-                </div>
-                <div class="stat-item">
                     <i class="fas fa-trophy"></i>
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our School Gallery</h2>
-                <p>Capturing moments of learning, growth, and joy at Little Minds® Foundation School</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/504166103_693514470210673_2571265519265060298_n.jpg" alt="Preschool Activities">
-                    <div class="gallery-overlay">
-                        <h3>Learning Through Play</h3>
-                        <p>Hands-on activities that make learning fun</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/525926127_18320463376228562_9155515539839177551_n.jpg" alt="Art & Craft">
-                    <div class="gallery-overlay">
-                        <h3>Creative Expression</h3>
-                        <p>Art and craft activities fostering creativity</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/519687113_18318831760228562_8003758764467673059_n.jpg" alt="Outdoor Activities">
-                    <div class="gallery-overlay">
-                        <h3>Outdoor Learning</h3>
-                        <p>Nature-based education and physical activities</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/502968548_18313409305228562_4552469522589429422_n.jpg" alt="Group Activities">
-                    <div class="gallery-overlay">
-                        <h3>Team Building</h3>
-                        <p>Collaborative learning experiences</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/523387253_18320136220228562_6356490488233676539_n.jpg" alt="Science Experiments">
-                    <div class="gallery-overlay">
-                        <h3>Science & Discovery</h3>
-                        <p>Exploring the world through experiments</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="img/gallery/photo1_files/504166103_693514470210673_2571265519265060298_n.jpg" alt="Cultural Events">
-                    <div class="gallery-overlay">
-                        <h3>Cultural Celebrations</h3>
-                        <p>Celebrating diversity and traditions</p>
-                    </div>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Success Rate</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Founder's Desk Section -->
-    <section id="founders" class="founders">
+    <!-- Our Timescape (About) Section -->
+    <section id="timescape" class="timescape">
         <div class="container">
-            <div class="section-title">
-                <h2>Founder's Desk</h2>
-                <p>Meet the visionary leaders behind Little Minds® Foundation School</p>
+            <div class="section-title fade-in">
+                <h2>Our Timescape</h2>
+                <p>A journey through our legacy of nurturing young minds and building future leaders</p>
             </div>
             
-            <div class="founders-grid">
-                <div class="founder-card">
-                    <div class="founder-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Meenu Ma'am - Principal">
-                    </div>
-                    <div class="founder-info">
-                        <h3>Meenu Ma'am</h3>
-                        <h4>Principal</h4>
-                        <p class="qualification">Masters in Education, Cardiff UK</p>
-                        <p class="description">A passionate educator with a hands-on approach to teaching. Meenu Ma'am believes in creating an environment where every child feels valued and encouraged to explore their potential. Her expertise in early childhood education has shaped the foundation of our school's philosophy.</p>
-                        <div class="founder-vision">
-                            <h5>Vision</h5>
-                            <p>"Every child is unique and deserves an education that nurtures their individuality while building strong foundations for lifelong learning."</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="founder-card">
-                    <div class="founder-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Saurabh Sir - Director">
-                    </div>
-                    <div class="founder-info">
-                        <h3>Saurabh Sir</h3>
-                        <h4>Director - Operations</h4>
-                        <p class="qualification">Masters in Management, New Delhi</p>
-                        <p class="description">With extensive experience in educational management, Saurabh Sir oversees the operational excellence of our institution. His strategic vision has been instrumental in establishing our legacy of K-12 schools across Haryana & Himachal Pradesh.</p>
-                        <div class="founder-vision">
-                            <h5>Mission</h5>
-                            <p>"To create educational institutions that not only impart knowledge but also instill values, character, and a love for learning in every student."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team Section -->
-    <section id="team" class="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-                <p>Meet our seasoned faculty dedicated to nurturing young minds</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 1">
-                    </div>
-                    <div class="member-info">
-                        <h3>Priya Sharma</h3>
-                        <h4>Head Teacher - Pre-Primary</h4>
-                        <p>15+ years experience in early childhood education. Specializes in Montessori methods and child psychology.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Montessori</span>
-                            <span class="expertise-tag">Child Psychology</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 2">
-                    </div>
-                    <div class="member-info">
-                        <h3>Rajesh Kumar</h3>
-                        <h4>Senior Teacher - Primary</h4>
-                        <p>12+ years teaching experience with expertise in activity-based learning and creative teaching methodologies.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Activity-Based Learning</span>
-                            <span class="expertise-tag">Creative Teaching</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 3">
-                    </div>
-                    <div class="member-info">
-                        <h3>Anita Singh</h3>
-                        <h4>Art & Craft Specialist</h4>
-                        <p>10+ years experience in creative arts education. Believes in fostering creativity and self-expression in children.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Creative Arts</span>
-                            <span class="expertise-tag">Self-Expression</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 4">
-                    </div>
-                    <div class="member-info">
-                        <h3>Mohan Patel</h3>
-                        <h4>Physical Education Coordinator</h4>
-                        <p>8+ years experience in sports education. Focuses on developing physical fitness and team spirit in children.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Sports Education</span>
-                            <span class="expertise-tag">Physical Fitness</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 5">
-                    </div>
-                    <div class="member-info">
-                        <h3>Sunita Verma</h3>
-                        <h4>Special Education Needs</h4>
-                        <p>10+ years experience in inclusive education. Specializes in supporting children with diverse learning needs.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Inclusive Education</span>
-                            <span class="expertise-tag">Learning Support</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-image">
-                        <img src="img/gallery/Profile_avatar_placeholder_large.png" alt="Teacher 6">
-                    </div>
-                    <div class="member-info">
-                        <h3>Vikram Singh</h3>
-                        <h4>Music & Movement</h4>
-                        <p>6+ years experience in music education. Creates engaging learning experiences through rhythm and movement.</p>
-                        <div class="member-expertise">
-                            <span class="expertise-tag">Music Education</span>
-                            <span class="expertise-tag">Movement</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Little Minds® Foundation School</h2>
+            <div class="timescape-content">
+                <div class="timescape-text">
+                    <h3>Our Foundation Story</h3>
                     <p>Founded with a vision to provide quality education that goes beyond textbooks, Little Minds® Foundation School has been nurturing young minds in Dehradun for over 15 years. Our hands-on approach to education combines traditional values with modern teaching methodologies.</p>
+                    
                     <p>We believe in creating an environment where children feel safe, valued, and encouraged to explore their potential. Our experienced faculty, state-of-the-art facilities, and child-centric curriculum ensure that every child receives the attention and guidance they need to thrive.</p>
-                    <div class="about-features">
+                    
+                    <div class="timescape-features">
                         <div class="feature">
                             <i class="fas fa-heart"></i>
                             <span>Nurturing Environment</span>
@@ -335,14 +118,435 @@
                             <span>Creative Learning</span>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-users"></i>
-                            <span>Individual Attention</span>
+                            <i class="fas fa-hands-helping"></i>
+                            <span>Hands-on Education</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <span>Excellence in K-12</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="img/logos/littleminds_cover.jpeg" alt="Little Minds Foundation School">
+                
+                <div class="timescape-card fade-in">
+  <iframe width="355" height="200" src="https://www.youtube.com/embed/yix0hbrcJjM?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1" title="Little Minds Pre-School- Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Force Behind (Team) Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>The Force Behind</h2>
+                <p>Meet the visionary leaders and dedicated educators who make the magic happen</p>
+            </div>
+            
+            <!-- Founders -->
+            <div class="founders-section">
+                <h3 class="subsection-title">Our Visionary Leaders</h3>
+                <div class="founders-grid">
+                    <div class="founder-card fade-in">
+                        <div class="founder-image">
+                            <img src="founder1.jpg" alt="Meenu Ma'am">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Meenu Ma'am</h3>
+                            <h4>Founder & Director</h4>
+                            <p class="qualification">Masters in Education, Cardiff UK</p>
+                            <p class="description">A passionate educator with a hands-on approach to teaching. Meenu Ma'am believes in creating an environment where every child feels valued and encouraged to explore their potential. Her expertise in early childhood education has shaped the foundation of our school's philosophy.</p>
+                            <div class="founder-vision">
+                                <h5>Vision</h5>
+                                <p>"Every child is unique and deserves an education that nurtures their individuality while building strong foundations for lifelong learning."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="founder-card fade-in">
+                        <div class="founder-image">
+                            <img src="founder2.jpg" alt="Saurabh Sir">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Saurabh Sir</h3>
+                            <h4>Co-Founder & Managing Director</h4>
+                            <p class="qualification">Masters in Management, New Delhi</p>
+                            <p class="description">With extensive experience in educational management, Saurabh Sir oversees the operational excellence of our institution. His strategic vision has been instrumental in establishing our legacy of K-12 schools across Haryana & Himachal Pradesh.</p>
+                            <div class="founder-vision">
+                                <h5>Mission</h5>
+                                <p>"To create educational institutions that not only impart knowledge but also instill values, character, and a love for learning in every student."</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Faculty Team -->
+            <div class="faculty-section">
+                <h3 class="subsection-title">Our Seasoned Faculty</h3>
+                <div class="team-grid">
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher1.jpg" alt="Early Childhood Specialist">
+                        </div>
+                        <div class="member-info">
+                            <h3>Priya Sharma</h3>
+                            <h4>Early Childhood Education Specialist</h4>
+                            <p>15+ years experience in early childhood education. Specializes in Montessori methods and child psychology.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Montessori</span>
+                                <span class="expertise-tag">Child Psychology</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher2.jpg" alt="Primary Education Expert">
+                        </div>
+                        <div class="member-info">
+                            <h3>Rajesh Kumar</h3>
+                            <h4>Primary Education Expert</h4>
+                            <p>12+ years teaching experience with expertise in activity-based learning and creative teaching methodologies.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Activity-based Learning</span>
+                                <span class="expertise-tag">Creative Teaching</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher3.jpg" alt="Arts & Creativity Teacher">
+                        </div>
+                        <div class="member-info">
+                            <h3>Anjali Verma</h3>
+                            <h4>Arts & Creativity Teacher</h4>
+                            <p>10+ years experience in creative arts education. Believes in fostering creativity and self-expression in children.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Creative Arts</span>
+                                <span class="expertise-tag">Self-expression</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher4.jpg" alt="Physical Education Instructor">
+                        </div>
+                        <div class="member-info">
+                            <h3>Vikram Singh</h3>
+                            <h4>Physical Education Instructor</h4>
+                            <p>8+ years experience in sports education. Focuses on developing physical fitness and team spirit in children.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Sports Education</span>
+                                <span class="expertise-tag">Team Building</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher5.jpg" alt="Special Education Expert">
+                        </div>
+                        <div class="member-info">
+                            <h3>Sunita Devi</h3>
+                            <h4>Inclusive Education Specialist</h4>
+                            <p>10+ years experience in inclusive education. Specializes in supporting children with diverse learning needs.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Inclusive Education</span>
+                                <span class="expertise-tag">Special Needs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member fade-in">
+                        <div class="member-image">
+                            <img src="teacher6.jpg" alt="Music Teacher">
+                        </div>
+                        <div class="member-info">
+                            <h3>Rohit Mehta</h3>
+                            <h4>Music & Movement Teacher</h4>
+                            <p>6+ years experience in music education. Creates engaging learning experiences through rhythm and movement.</p>
+                            <div class="member-expertise">
+                                <span class="expertise-tag">Music Education</span>
+                                <span class="expertise-tag">Movement Therapy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Programs</h2>
+                <p>Comprehensive educational programs designed to nurture every aspect of your child's development</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Early Childhood (Pre-K to K)</h3>
+                    <p>Foundation years focused on play-based learning, social skills development, and creativity through Montessori methods.</p>
+                    <ul class="program-features">
+                        <li>Play-based Learning</li>
+                        <li>Montessori Methods</li>
+                        <li>Social Skills Development</li>
+                        <li>Creative Expression</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Primary Education (Grades 1-5)</h3>
+                    <p>Building strong academic foundations while fostering curiosity, critical thinking, and character development.</p>
+                    <ul class="program-features">
+                        <li>Activity-based Learning</li>
+                        <li>STEM Education</li>
+                        <li>Language Development</li>
+                        <li>Character Building</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Secondary Education (Grades 6-12)</h3>
+                    <p>Preparing students for higher education and future careers with comprehensive academic and life skills training.</p>
+                    <ul class="program-features">
+                        <li>College Preparation</li>
+                        <li>Career Guidance</li>
+                        <li>Leadership Development</li>
+                        <li>Life Skills Training</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative Arts Program</h3>
+                    <p>Nurturing artistic talents through music, dance, visual arts, and creative writing across all grade levels.</p>
+                    <ul class="program-features">
+                        <li>Music & Dance</li>
+                        <li>Visual Arts</li>
+                        <li>Creative Writing</li>
+                        <li>Drama & Theatre</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Sports & Physical Education</h3>
+                    <p>Promoting physical fitness, teamwork, and sportsmanship through various indoor and outdoor activities.</p>
+                    <ul class="program-features">
+                        <li>Team Sports</li>
+                        <li>Individual Fitness</li>
+                        <li>Yoga & Wellness</li>
+                        <li>Outdoor Adventures</li>
+                    </ul>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Special Needs Support</h3>
+                    <p>Inclusive education programs designed to support children with diverse learning needs and abilities.</p>
+                    <ul class="program-features">
+                        <li>Individualized Support</li>
+                        <li>Therapy Services</li>
+                        <li>Adaptive Learning</li>
+                        <li>Family Counseling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Testimonies Section -->
+    <section id="testimonies" class="testimonies">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Parent's Testimonies</h2>
+                <p>Hear what our Little Minds family has to say about their experience</p>
+            </div>
+            
+            <div class="testimonies-grid">
+                <div class="testimony-card fade-in">
+                    <div class="testimony-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Little Minds has transformed my daughter's learning journey. The caring teachers and innovative approach have helped her develop confidence and creativity beyond my expectations."</p>
+                        <div class="testimony-author">
+                            <img src="parent1.jpg" alt="Parent">
+                            <div class="author-info">
+                                <h4>Priya Gupta</h4>
+                                <span>Parent of Ananya (Grade 3)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimony-card fade-in">
+                    <div class="testimony-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The holistic education approach at Little Minds has helped my son develop not just academically but also emotionally and socially. We couldn't be happier with our choice."</p>
+                        <div class="testimony-author">
+                            <img src="parent2.jpg" alt="Parent">
+                            <div class="author-info">
+                                <h4>Rajesh Kumar</h4>
+                                <span>Parent of Arjun (Grade 7)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimony-card fade-in">
+                    <div class="testimony-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The individual attention and care that each child receives at Little Minds is remarkable. My twins have flourished in this nurturing environment."</p>
+                        <div class="testimony-author">
+                            <img src="parent3.jpg" alt="Parent">
+                            <div class="author-info">
+                                <h4>Sunita Sharma</h4>
+                                <span>Parent of Kavya & Karan (Grade 5)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Alumni Section -->
+    <section id="alumni" class="alumni">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Alumni</h2>
+                <p>Celebrating the achievements of our Little Minds graduates who are making a difference in the world</p>
+            </div>
+            
+            <div class="alumni-preview">
+                <div class="alumni-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Successful Graduates</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Universities Worldwide</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Career Fields</span>
+                    </div>
+                </div>
+                
+                <div class="alumni-highlights">
+                    <div class="alumni-card">
+                        <img src="alumni1.jpg" alt="Alumni Success">
+                        <h4>Engineering Excellence</h4>
+                        <p>Our graduates excel in top engineering colleges across India and abroad.</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni2.jpg" alt="Alumni Success">
+                        <h4>Medical Achievements</h4>
+                        <p>Many of our alumni are pursuing successful careers in medicine and healthcare.</p>
+                    </div>
+                    <div class="alumni-card">
+                        <img src="alumni3.jpg" alt="Alumni Success">
+                        <h4>Creative Pursuits</h4>
+                        <p>Our emphasis on creativity has led many graduates to excel in arts and media.</p>
+                    </div>
+                </div>
+                
+                <div class="alumni-cta">
+                    <a href="alumni.html" class="contact-btn">
+                        <i class="fas fa-graduation-cap"></i>
+                        Explore Alumni Stories
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview Section -->
+    <section id="gallery" class="gallery-preview">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Gallery</h2>
+                <p>Capturing moments of learning, growth, and joy at Little Minds® Foundation School</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="gallery1.jpg" alt="Students in Classroom">
+                    <div class="gallery-overlay">
+                        <h3>Interactive Learning</h3>
+                        <p>Students engaged in hands-on learning activities</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="gallery2.jpg" alt="Sports Activities">
+                    <div class="gallery-overlay">
+                        <h3>Sports & Fitness</h3>
+                        <p>Building physical strength and team spirit</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="gallery3.jpg" alt="Cultural Events">
+                    <div class="gallery-overlay">
+                        <h3>Cultural Celebrations</h3>
+                        <p>Embracing diversity and traditions</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="gallery4.jpg" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <h3>Science Exploration</h3>
+                        <p>Discovering the wonders of science</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-cta">
+                <a href="gallery.html" class="contact-btn">
+                    <i class="fas fa-images"></i>
+                    View Full Gallery
+                </a>
             </div>
         </div>
     </section>
@@ -350,10 +554,15 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact Us - Inquiring</h2>
+                <p>Ready to give your child the best start in their educational journey?</p>
+            </div>
+            
             <div class="contact-layout">
                 <div class="contact-left">
-                    <h2>Get in Touch</h2>
-                    <p>Ready to give your child the best start in their educational journey? Contact us today to learn more about our programs and admission process.</p>
+                    <h3>Get in Touch</h3>
+                    <p>Contact us today to learn more about our programs and admission process. We're here to answer all your questions and help you make the best decision for your child's future.</p>
                     
                     <div class="contact-details">
                         <div class="contact-detail-item">
@@ -361,7 +570,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-detail-content">
-                                <h3>Address</h3>
+                                <h4>Address</h4>
                                 <p>Little Minds® Foundation School<br>Dehradun, Uttarakhand, India</p>
                             </div>
                         </div>
@@ -371,8 +580,8 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-detail-content">
-                                <h3>Phone</h3>
-                                <p><a href="tel:+919119060984">+91 91190 60984</a></p>
+                                <h4>Phone</h4>
+                                <p>+91 135-XXX-XXXX</p>
                             </div>
                         </div>
                         
@@ -381,8 +590,8 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-detail-content">
-                                <h3>Email</h3>
-                                <p><a href="mailto:info@littlemindsdehradun.com">info@littlemindsdehradun.com</a></p>
+                                <h4>Email</h4>
+                                <p>admissions@littleminds.edu.in</p>
                             </div>
                         </div>
                     </div>
@@ -390,31 +599,66 @@
                 
                 <div class="contact-right">
                     <div class="contact-form-container">
-                        <h2>Enquire About Admission</h2>
-                        <form class="contact-form" id="contactForm">
+                        <h3>Admission Inquiry Form</h3>
+                        <form class="contact-form" action="#" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">Full Name *</label>
-                                    <input type="text" id="name" name="name" required>
+                                    <label for="parentName">Parent's Name *</label>
+                                    <input type="text" id="parentName" name="parentName" required placeholder="Enter parent's full name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required>
+                                    <label for="childName">Child's Name *</label>
+                                    <input type="text" id="childName" name="childName" required placeholder="Enter child's full name">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="Enter email address">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="childAge">Child's Age</label>
-                                <input type="number" id="childAge" name="childAge" min="2" max="12">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="childAge">Child's Age</label>
+                                    <input type="number" id="childAge" name="childAge" placeholder="Enter child's age">
+                                </div>
+                                <div class="form-group">
+                                    <label for="grade">Interested Grade</label>
+                                    <select id="grade" name="grade">
+                                        <option value="">Select Grade</option>
+                                        <option value="pre-k">Pre-K</option>
+                                        <option value="kindergarten">Kindergarten</option>
+                                        <option value="grade-1">Grade 1</option>
+                                        <option value="grade-2">Grade 2</option>
+                                        <option value="grade-3">Grade 3</option>
+                                        <option value="grade-4">Grade 4</option>
+                                        <option value="grade-5">Grade 5</option>
+                                        <option value="grade-6">Grade 6</option>
+                                        <option value="grade-7">Grade 7</option>
+                                        <option value="grade-8">Grade 8</option>
+                                        <option value="grade-9">Grade 9</option>
+                                        <option value="grade-10">Grade 10</option>
+                                        <option value="grade-11">Grade 11</option>
+                                        <option value="grade-12">Grade 12</option>
+                                    </select>
+                                </div>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your child and any specific requirements..."></textarea>
+                                <label for="message">Message / Questions</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your child's needs and any questions you have..."></textarea>
                             </div>
-                            <button type="submit" class="submit-btn">Send Enquiry</button>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Inquiry
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -428,55 +672,48 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Little Minds® Foundation School</h3>
-                    <p>Nurturing young minds with hands-on education, experienced faculty, and a legacy of excellence in K-12 education across Haryana & Himachal Pradesh.</p>
+                    <p>Nurturing young minds with quality education for over 15 years in Dehradun.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.me/919119060984" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#founders">Founder's Desk</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#timescape">Our Timescape</a></li>
+                        <li><a href="#team">The Force Behind</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="alumni.html">Our Alumni</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Programs</h3>
-                    <ul>
-                        <li><a href="#">Pre-Primary (2-5 years)</a></li>
-                        <li><a href="#">Primary (6-10 years)</a></li>
-                        <li><a href="#">Middle School (11-13 years)</a></li>
-                        <li><a href="#">Special Education Needs</a></li>
-                        <li><a href="#">After-School Activities</a></li>
-                    </ul>
+                    <h3>Contact Info</h3>
+                    <p>Dehradun, Uttarakhand, India</p>
+                    <p>Phone: +91 135-XXX-XXXX</p>
+                    <p>Email: info@littleminds.edu.in</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Newsletter</h3>
-                    <p>Stay updated with our latest news and events.</p>
+                    <p>Stay updated with our latest news</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
                     </form>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Little Minds® Foundation School, Dehradun. All rights reserved.</p>
+                <p>&copy; 2024 Little Minds® Foundation School. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
