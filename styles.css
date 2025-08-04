@@ -385,6 +385,208 @@ body {
     color: #666;
 }
 
+/* ===== Hero Section Content Without Card Styling ===== */
+.hero-content {
+    max-width: 900px;
+    margin: 4rem auto;
+    z-index: 5;
+    position: relative;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    text-align: center;
+}
+
+/* Full scattered floating elements for all hero images with scattering motion */
+.floating-elements {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    min-height: 600px;
+}
+
+/* Shared floating element style with scattering animation */
+.floating-ufo, .floating-planet, .floating-fireball {
+    position: absolute;
+    filter: drop-shadow(0 0 8px rgba(112, 60, 225, 0.6));
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0.85;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Single centered bulb moved down to avoid navbar */
+.floating-bulb {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(112, 60, 225, 1);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(112, 60, 225, 0.3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 13%; /* moved down from 8% to 25% to avoid navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scatterFloatBulb 10s ease-in-out infinite;
+    z-index: 10;
+    border: 2px solid rgba(112, 60, 225, 0.4);
+}
+
+.floating-bulb img {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 15px rgba(112, 60, 225, 1.5)) brightness(1.2);
+    opacity: 1;
+}
+
+/* Specific styling for each floating element type */
+.floating-ufo {
+    width: 70px;
+    height: 42px;
+    background: url('img/hero-elements/ufo.png') no-repeat center/contain;
+    animation-name: scatterFloatUfo;
+    animation-duration: 8s;
+}
+
+.floating-planet {
+    width: 90px;
+    height: 90px;
+    background: url('img/hero-elements/solarsystem.png') no-repeat center/contain;
+    animation-name: scatterFloatPlanet;
+    animation-duration: 12s;
+}
+
+.floating-fireball {
+    width: 60px;
+    height: 60px;
+    background: url('img/hero-elements/fireball.png') no-repeat center/contain;
+    filter: drop-shadow(0 0 10px rgba(255, 123, 123, 0.8));
+    animation-name: scatterFloatFireball;
+    animation-duration: 9s;
+}
+
+/* Completely random scattered positions all around the hero section */
+
+/* UFOs randomly placed all over */
+.floating-ufo-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.floating-ufo-2 { top: 20%; right: 10%; animation-delay: 3s; }
+.floating-ufo-3 { top: 35%; left: 15%; animation-delay: 6s; }
+.floating-ufo-4 { top: 50%; right: 25%; animation-delay: 9s; }
+.floating-ufo-5 { top: 60%; left: 7%; animation-delay: 12s; }
+.floating-ufo-6 { top: 75%; right: 18%; animation-delay: 15s; }
+.floating-ufo-7 { top: 85%; left: 25%; animation-delay: 18s; }
+.floating-ufo-8 { top: 90%; right: 30%; animation-delay: 21s; }
+.floating-ufo-9 { top: 55%; right: 5%; animation-delay: 24s; }
+
+/* Planets randomly placed all over */
+.floating-planet-1 { top: 91%; left: 48%; animation-delay: 2s; }
+.floating-planet-2 { top: 25%; right: 4%; animation-delay: 6s; }
+.floating-planet-3 { top: 20%; left: 7%; animation-delay: 10s; }
+.floating-planet-4 { top: 70%; right: 10%; animation-delay: 14s; }
+.floating-planet-5 { top: 80%; left: 20%; animation-delay: 18s; }
+
+/* Fireballs randomly placed all over */
+.floating-fireball-1 { top: 42%; left: 10%; animation-delay: 1s; }
+.floating-fireball-2 { top: 38%; right: 15%; animation-delay: 5s; }
+.floating-fireball-3 { top: 58%; left: 20%; animation-delay: 9s; }
+.floating-fireball-4 { top: 75%; left: 10%; animation-delay: 13s; }
+.floating-fireball-5 { top: 85%; right: 25%; animation-delay: 17s; }
+.floating-fireball-6 { top: 95%; left: 30%; animation-delay: 21s; }
+
+
+/* Scattering animations */
+@keyframes scatterFloatUfo {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(8px, -12px) rotate(3deg); }
+    50% { transform: translate(-6px, 6px) rotate(-2deg); }
+    75% { transform: translate(4px, 10px) rotate(1deg); }
+}
+
+@keyframes scatterFloatPlanet {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-10px, -8px) rotate(15deg); }
+    50% { transform: translate(8px, 4px) rotate(30deg); }
+    75% { transform: translate(-4px, 8px) rotate(45deg); }
+}
+
+@keyframes scatterFloatFireball {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25% { transform: translate(6px, -10px) scale(1.1) rotate(5deg); }
+    50% { transform: translate(-8px, 3px) scale(0.9) rotate(-3deg); }
+    75% { transform: translate(5px, 8px) scale(1.05) rotate(2deg); }
+}
+
+@keyframes scatterFloatBulb {
+    0%, 100% { 
+        transform: translateX(-50%) translate(0, 0);
+        box-shadow: 0 0 50px rgba(112, 60, 225, 1);
+    }
+    25% { 
+        transform: translateX(-50%) translate(-8px, -12px);
+        box-shadow: 0 0 60px rgba(112, 60, 225, 1.2);
+    }
+    50% { 
+        transform: translateX(-50%) translate(6px, 4px);
+        box-shadow: 0 0 70px rgba(112, 60, 225, 1.5);
+    }
+    75% { 
+        transform: translateX(-50%) translate(-4px, 10px);
+        box-shadow: 0 0 55px rgba(112, 60, 225, 1.1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-ufo {
+        width: 50px;
+        height: 30px;
+    }
+    .floating-planet {
+        width: 70px;
+        height: 70px;
+    }
+    .floating-fireball {
+        width: 45px;
+        height: 45px;
+    }
+    .floating-bulb {
+        width: 90px;
+        height: 90px;
+        top: 30%; /* adjusted for mobile */
+    }
+    .floating-bulb img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-ufo, .floating-planet, .floating-fireball {
+        width: 35px;
+        height: 21px;
+    }
+    .floating-bulb {
+        width: 60px;
+        height: 60px;
+        top: 35%; /* further down on small screens */
+    }
+    .floating-bulb img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
 /* ===== TIMESCAPE SECTION ===== */
 .timescape {
     padding: 5rem 0;
