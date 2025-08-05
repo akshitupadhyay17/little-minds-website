@@ -103,6 +103,7 @@ body {
     padding: 1rem 2rem;
     font-size: 1.1rem;
     margin-bottom: 3rem;
+    margin-top: 9rem;
     animation: dissolveIn 1s ease-out 0.6s both;
     position: relative;
     overflow: hidden;
@@ -289,7 +290,9 @@ body {
 /* ===== HERO SECTION ===== */
 .hero {
     padding: 130px 2rem 110px;
-    background: linear-gradient(135deg, #f2eff7 0%, #e8e3f0 50%, #ddd6e9 100%);
+    background: 
+        linear-gradient(135deg, rgba(242, 239, 247, 0.8) 0%, rgba(232, 227, 240, 0.8) 50%, rgba(221, 214, 233, 0.8) 100%),
+        url('img/hero-elements/IMG_0504.JPG') center/cover no-repeat;
     position: relative;
     overflow: hidden;
     display: block; /* Change from flex to block */
@@ -334,29 +337,33 @@ body {
     pointer-events: none;
 }
 
+
 .hero h1 {
     font-family: "Fraunces", serif;
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    margin-bottom: 27.5rem;
+    margin-top: -15rem;
     color: #322353;
     animation: dissolveIn 1s ease-out;
     line-height: 1.2;
     font-weight: 900;
+    position: relative;
+    top: 10rem; /* Move heading down without affecting layout */
 }
-
-.hero p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    color: #322353;
-    animation: dissolveIn 1s ease-out 0.3s both;
+.hero {
+    padding: 130px 2rem 110px;
+    height: 800px; /* Set fixed height */
+    background:
+        linear-gradient(135deg, rgba(242, 239, 247, 0.8) 0%, rgba(232, 227, 240, 0.8) 50%, rgba(221, 214, 233, 0.8) 100%),
+        url('img/hero-elements/IMG_0504.JPG') center/cover no-repeat;
+    /* rest of your existing styles */
 }
 
 .hero-stats {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-top: 2rem;
+    margin-top: 0rem;
     animation: dissolveIn 1s ease-out 0.9s both;
 }
 
@@ -424,30 +431,7 @@ body {
 }
 
 /* Single centered bulb moved down to avoid navbar */
-.floating-bulb {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 0 50px rgba(112, 60, 225, 1);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(112, 60, 225, 0.3));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 13%; /* moved down from 8% to 25% to avoid navbar */
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scatterFloatBulb 10s ease-in-out infinite;
-    z-index: 10;
-    border: 2px solid rgba(112, 60, 225, 0.4);
-}
 
-.floating-bulb img {
-    width: 120px;
-    height: 120px;
-    filter: drop-shadow(0 0 15px rgba(112, 60, 225, 1.5)) brightness(1.2);
-    opacity: 1;
-}
 
 /* Specific styling for each floating element type */
 .floating-ufo {
@@ -481,7 +465,7 @@ body {
 .floating-ufo-1 { top: 10%; left: 5%; animation-delay: 0s; }
 .floating-ufo-2 { top: 20%; right: 10%; animation-delay: 3s; }
 .floating-ufo-3 { top: 35%; left: 15%; animation-delay: 6s; }
-.floating-ufo-4 { top: 50%; right: 25%; animation-delay: 9s; }
+.floating-ufo-4 { top: 50%; right: 15%; animation-delay: 9s; }
 .floating-ufo-5 { top: 60%; left: 7%; animation-delay: 12s; }
 .floating-ufo-6 { top: 75%; right: 18%; animation-delay: 15s; }
 .floating-ufo-7 { top: 85%; left: 25%; animation-delay: 18s; }
@@ -590,7 +574,7 @@ body {
 /* ===== TIMESCAPE SECTION ===== */
 .timescape {
     padding: 5rem 0;
-    background: #ffffff;
+    background: linear-gradient(315deg, #ddd6e9 0%, #e8e3f0 50%, #f2eff7 100%);
 }
 
 .timescape-content {
